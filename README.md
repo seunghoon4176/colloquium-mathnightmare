@@ -1,4 +1,4 @@
-# colocium-mathnightmare
+# colloquium-mathnightmare
  콜로키움 제주 제일고 팀 Math Nightmare 게임 제작을 위한 깃허브 리포지토리입니다.
  <br/>팀원 (손승훈,고준표,강부윤)
  
