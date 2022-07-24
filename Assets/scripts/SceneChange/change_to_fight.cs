@@ -5,17 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class change_to_fight : MonoBehaviour
 {
-    private struct Sin
-    {
-        private string text;
-
-        private Sin(string text)
-        {
-            this.text = "sin 몬스터가 나타났다!";
-        }
-    }
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +19,6 @@ public class change_to_fight : MonoBehaviour
 
     public void ButtonClick(string monster) //버튼 클릭 이벤트에 대한 함수를 만들어 준다.
     { 
-        SceneManager.LoadScene("fight");
+        SceneManager.LoadScene("5. fight");
     }
 }
