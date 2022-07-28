@@ -39,7 +39,7 @@ public class Fight : MonoBehaviour
         monster sin;
         sin.name = "Sin 클롭스";
         sin.appearText = "Sin 클롭스가 나타났다!";
-        sin.info = "미친새끼.";
+        sin.info = ".";
         sin.tip = "Sin 함수의 개형은 ...";
         sin.atk = 10;
         sin.def = 8;
@@ -47,7 +47,7 @@ public class Fight : MonoBehaviour
         monster cos;
         cos.name = "Cos 클롭스";
         cos.appearText = "Cos 클롭스가 나타났다!";
-        cos.info = "또라이새끼.";
+        cos.info = ".";
         cos.tip = "Cos 함수의 개형은 ...";
         cos.atk = 12;
         cos.def = 10;
@@ -55,7 +55,7 @@ public class Fight : MonoBehaviour
         monster tan;
         tan.name = "Tan 클롭스";
         tan.appearText = "Tan 클롭스가 나타났다!";
-        tan.info = "개새끼.";
+        tan.info = ".";
         tan.tip = "tan 함수의 개형은 ...";
         tan.atk = 15;
         tan.def = 12;
@@ -63,7 +63,7 @@ public class Fight : MonoBehaviour
         monster sincos;
         sincos.name = "SinCos 클롭스";
         sincos.appearText = "SinCos 클롭스가 나타났다!";
-        sincos.info = "미친 또라이새끼.";
+        sincos.info = ".";
         sincos.tip = "앞서 공부한 내용을 떠올리자.";
         sincos.atk = 20;
         sincos.def = 18;
@@ -71,7 +71,7 @@ public class Fight : MonoBehaviour
         monster costan;
         costan.name = "CosTan 클롭스";
         costan.appearText = "CosTan 클롭스가 나타났다!";
-        costan.info = "개또라이새끼.";
+        costan.info = ".";
         costan.tip = "앞서 공부한 내용을 떠올리자.";
         costan.atk = 25;
         costan.def = 20;
@@ -79,7 +79,7 @@ public class Fight : MonoBehaviour
         monster sintan;
         sintan.name = "SinTan 클롭스";
         sintan.appearText = "SinTan 클롭스가 나타났다!";
-        sintan.info = "개미친새끼.";
+        sintan.info = ".";
         sintan.tip = "앞서 공부한 내용을 떠올리자.";
         sintan.atk = 30;
         sintan.def = 25;
@@ -87,35 +87,13 @@ public class Fight : MonoBehaviour
         monster boss;
         boss.name = "보스";
         boss.appearText = "보스가 나타났다!";
-        boss.info = "개미친 또라이새끼.";
+        boss.info = ".";
         boss.tip = "앞서 공부한 내용을 떠올리자.";
         boss.atk = 100;
         boss.def = 80;
         
         // 몬스터 종류에 따라 출현 문구 설정
-        switch(input_value) 
-        {
-            case 0 :
-                appearText.text = sin.appearText;
-                break;
-            case 1 :
-                appearText.text = cos.appearText;
-                break;
-            case 2 :
-                appearText.text = tan.appearText;
-                break;
-            case 3 :
-                appearText.text = sincos.appearText;
-                break;
-            case 4 :
-                appearText.text = costan.appearText;
-                break;
-            case 5 :
-                appearText.text = sintan.appearText;
-                break;
-            case 6 :
-                appearText.text = boss.appearText;
-                break;
-            }
+        monster[] monsterNameList = new monster[]{sin, cos, tan, sincos, costan, sintan, boss};
+        appearText.text = monsterNameList[input_value].appearText; // sin.appearText처럼 요소에 직접 접근해도 되지만, 한 줄 한 줄 따로 적어줘야 하는 게 귀찮아서 배열을 만들고, 인덱스 값으로 접근함.
     }
 }
