@@ -12,7 +12,7 @@ public class mapScroll : MonoBehaviour
     float moveX, moveY;
     
     [Header("이동 속도 조절")]
-    [SerializeField] [Range(1f, 1000f)] float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~500으로 설정 가능
+    [SerializeField] [Range(1f, 1000f)] float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~1000으로 설정 가능
 
     void Update()
     {

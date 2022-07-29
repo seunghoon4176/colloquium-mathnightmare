@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] [Range(1f, 500f)] float minX = 8f;
-    [SerializeField] [Range(1f, 10000f)] float maxX = 100f;
-    [SerializeField] [Range(1f, 500f)] float minY = 15f;
-    [SerializeField] [Range(1f, 500f)] float maxY = 80f;
-
     float moveX, moveY;
-    
-    [Header("이동 속도 조절")]
-    [SerializeField] [Range(1f, 500f)] float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~500으로 설정 가능
+    float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~500으로 설정 가능
 
     void Update()
     {
@@ -24,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
         // 범위 제한
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        if (pos.x < minX) pos.x = minX;
-        if (pos.y < minY) pos.y = minY;
-        if (pos.x > maxX) pos.x = maxX;
-        if (pos.y > maxY) pos.y = maxY;
+        if (pos.x < -825) pos.x = -825;
+        if (pos.y < -380) pos.y = -380;
+        if (pos.x > 825) pos.x = 825;
+        if (pos.y > 245) pos.y = 245;
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 }
