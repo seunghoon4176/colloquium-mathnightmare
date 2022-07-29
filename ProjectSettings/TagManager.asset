@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - textbook
+  - door
+  - Monster
   layers:
   - Default
   - TransparentFX
