@@ -17,8 +17,7 @@ public class touchDown : MonoBehaviour
         } if (other.tag == "Monster") {
             GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기;
         } if (other.tag == "barrier") {
-            Debug.Log("down stop!!");
-            PlayerPrefs.SetInt("canMove", 4);
+            PlayerPrefs.SetInt("downMove", 0);
         } if (other.tag == "textbook") {
             Debug.Log("hello");
         }
@@ -28,8 +27,7 @@ public class touchDown : MonoBehaviour
         if (other.tag == "textbook") {
             Debug.Log("bye");
         } if (other.tag == "barrier") {
-            Debug.Log("good");
-            PlayerPrefs.SetInt("canMove", 0);
+            PlayerPrefs.SetInt("downMove", 1);
         }
     }
 }
