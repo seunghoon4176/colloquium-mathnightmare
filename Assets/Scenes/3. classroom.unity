@@ -339,8 +339,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124852801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: -444, z: -2.156476}
-  m_LocalScale: {x: 80, y: 10, z: 100}
+  m_LocalPosition: {x: -7, y: -450, z: -2.156476}
+  m_LocalScale: {x: 80, y: 5, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1727236323}
@@ -467,7 +467,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 25, y: -20}
+  m_Offset: {x: 25, y: -25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -478,7 +478,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 30}
   m_EdgeRadius: 0
 --- !u!212 &173503381
 SpriteRenderer:
@@ -544,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd494c93a3fa3bc49ab26eb3137b2513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 4. corridor
 --- !u!1 &173741365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c566b51828645409b579bc5c76918f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 4. corridor
 --- !u!1 &584912957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,7 +2350,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -25, y: -20}
+  m_Offset: {x: -25, y: -25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2359,7 +2361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 30}
   m_EdgeRadius: 0
 --- !u!212 &1061133974
 SpriteRenderer:
@@ -2437,6 +2439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd938c7f8df1afe49ba04a5d1efb98a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 4. corridor
 --- !u!1 &1250218272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3079,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -35}
+  m_Offset: {x: 0, y: -45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3153,6 +3156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988d865ad785a114c9bd468482bef504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 4. corridor
 --- !u!1 &1727236322
 GameObject:
   m_ObjectHideFlags: 0

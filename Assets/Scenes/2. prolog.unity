@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665c86697a6b5b945b7c0b367d3a70d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 3. classroom
 --- !u!1 &280131854
 GameObject:
   m_ObjectHideFlags: 0

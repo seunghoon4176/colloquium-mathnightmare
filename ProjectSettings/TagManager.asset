@@ -8,6 +8,7 @@ TagManager:
   - door
   - Monster
   - barrier
+  - passiveDoor
   layers:
   - Default
   - TransparentFX

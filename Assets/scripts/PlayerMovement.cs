@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // 이동 (상하좌우 키: WASD키 혹은 상하좌우 키)
-        moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 추가할 x값 계산
-        moveY = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; // 추가할 y값 계산
+        moveX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime; // 추가할 x값 계산
+        moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime; // 추가할 y값 계산
 
         // x축, y축으로의 이동 여부를 저장하는 변수. 위에서 선언한 move함수의 인수로 사용할 예정
         int tempX = 1;

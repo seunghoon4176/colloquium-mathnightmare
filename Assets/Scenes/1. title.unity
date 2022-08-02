@@ -274,8 +274,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1209359284}
-        m_TargetAssemblyTypeName: change_to_setting, Assembly-CSharp
+      - m_Target: {fileID: 1209359286}
+        m_TargetAssemblyTypeName: sceneChange, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:
@@ -739,8 +739,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209359283}
-  - component: {fileID: 1209359284}
   - component: {fileID: 1209359285}
+  - component: {fileID: 1209359286}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -763,18 +763,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1209359284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209359281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044e0bd87a99453488d35d4924ae564d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1209359285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,6 +775,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665c86697a6b5b945b7c0b367d3a70d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene_name: 2. prolog
+--- !u!114 &1209359286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209359281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665c86697a6b5b945b7c0b367d3a70d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene_name: 1-1. setting
 --- !u!1 &1271904845
 GameObject:
   m_ObjectHideFlags: 0
