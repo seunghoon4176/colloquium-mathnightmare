@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 플레이어의 움직임을 조작할 클래스
 public class PlayerMovement : MonoBehaviour
 {
+    // x축의 방향으로 이동할 값, y축의 방향으로 이동할 값 저장할 변수 선언
     float moveX, moveY;
-    float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~500으로 설정 가능
+    float moveSpeed = 500f; // 이동 속도 500으로 설정
     
+    // 해당 방향으로 이동 가능한지를 저장하는 변수를 PlayerPrefs에 등록. (1: 가능, 0: 불가능)
     void Start() {
         PlayerPrefs.SetInt("leftMove", 1);
         PlayerPrefs.SetInt("rightMove", 1);
@@ -19,45 +22,48 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector2(transform.position.x + (moveX * x), transform.position.y + (moveY * y));
     }
 
+    // update: 프레임마다 처리하는 함수
     void Update()
     {
         // 이동 (상하좌우 키: WASD키 혹은 상하좌우 키)
         moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 추가할 x값 계산
         moveY = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; // 추가할 y값 계산
 
+        // x축, y축으로의 이동 여부를 저장하는 변수. 위에서 선언한 move함수의 인수로 사용할 예정
         int tempX = 1;
         int tempY = 1;
 
-        if (PlayerPrefs.GetInt("upMove") == 0 && PlayerPrefs.GetInt("leftMove") == 0) {
-            if (moveX < 0) {
-                tempX = 0;
-            } if (moveY > 0) {
-                tempY = 0;
-            } move(tempX, tempY);
-        } else if (PlayerPrefs.GetInt("upMove") == 0 && PlayerPrefs.GetInt("rightMove") == 0) {
-            if (moveX > 0) {
-                tempX = 0;
-            } if (moveY > 0) {
-                tempY = 0;
-            } move(tempX, tempY);
-        } else if (PlayerPrefs.GetInt("downMove") == 0 && PlayerPrefs.GetInt("leftMove") == 0) {
+        // 조건문을 확인하는 데 걸리는 짧은 시간조차 프레임이 넘어가는 것보다 길 수 있기에 물체가 대각선으로 닿고 있는 특수 케이스부터 처리함.
+        if (PlayerPrefs.GetInt("upMove") == 0 && PlayerPrefs.GetInt("leftMove") == 0) { // 위쪽과 왼쪽이 막혔을 때
+            if (moveX < 0) { // 왼쪽으로 가려 하면
+                tempX = 0; // x축의 이동이 없도록 함
+            } if (moveY > 0) { // 위쪽으로 가려 하면
+                tempY = 0; // y축의 이동이 없도록 함
+            } move(tempX, tempY); // 이동
+        } else if (PlayerPrefs.GetInt("upMove") == 0 && PlayerPrefs.GetInt("rightMove") == 0) { // 위쪽과 오른쪽이 막혔을 때
+            if (moveX > 0) { // 오른쪽으로 가려 하면
+                tempX = 0; // x축의 이동이 없도록 함
+            } if (moveY > 0) { // ...
+                tempY = 0; // ...
+            } move(tempX, tempY); // ..
+        } else if (PlayerPrefs.GetInt("downMove") == 0 && PlayerPrefs.GetInt("leftMove") == 0) { // 아래쪽과 왼쪽이 막혔을 때
             if (moveX < 0) {
                 tempX = 0;
             } if (moveY < 0) {
                 tempY = 0;
             } move(tempX, tempY);
-        } else if (PlayerPrefs.GetInt("downMove") == 0 && PlayerPrefs.GetInt("rightMove") == 0) {
+        } else if (PlayerPrefs.GetInt("downMove") == 0 && PlayerPrefs.GetInt("rightMove") == 0) { // 아래쪽과 오른쪽이 막혔을 때
             if (moveX > 0) {
                 tempX = 0;
             } if (moveY < 0) {
                 tempY = 0;
             } move(tempX, tempY);
-        } else if ((PlayerPrefs.GetInt("leftMove") == 0 && moveX < 0) || (PlayerPrefs.GetInt("rightMove") == 0 && moveX > 0)) {
-            move(0, 1);
-        } else if ((PlayerPrefs.GetInt("downMove") == 0 && moveY < 0) || (PlayerPrefs.GetInt("upMove") == 0 && moveY > 0)) {
-            move(1, 0);
-        } else {
-            move(1, 1);
+        } else if ((PlayerPrefs.GetInt("leftMove") == 0 && moveX < 0) || (PlayerPrefs.GetInt("rightMove") == 0 && moveX > 0)) { // 왼쪽이 막혔는데 왼쪽으로 가려 하거나, 오른쪽이 막혔는데 오른쪽으로 가려 하면
+            move(0, 1); // x축의 이동이 없도록 함
+        } else if ((PlayerPrefs.GetInt("downMove") == 0 && moveY < 0) || (PlayerPrefs.GetInt("upMove") == 0 && moveY > 0)) { // 아래쪽이 막혔는데 아래쪽으로 가려 하거나, 위쪽이 막혔는데 위쪽으로 가려 하면
+            move(1, 0); // y축의 이동이 없도록 함
+        } else { // 막힌 데가 전혀 없으면
+            move(1, 1); // 그냥 이동
         }
 
         // 범위 제한
