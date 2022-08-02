@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // 오브젝트와의 접촉을 처리하는 스크립트.
-public class touch : MonoBehaviour
+public class touchUp : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other) // 오브젝트와 접촉하면 실행
     {
@@ -14,8 +14,22 @@ public class touch : MonoBehaviour
         
         if (other.tag == "door") {
             SceneManager.LoadScene(sceneList[System.Array.IndexOf(sceneList, scene.name) + 1]); // 다음 씬으로 넘어가기
-        } else if (other.tag == "Monster") {
-            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        } if (other.tag == "Monster") {
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기;
+        } if (other.tag == "barrier") {
+            Debug.Log("up stop!!");
+            PlayerPrefs.SetInt("canMove", 3);
+        } if (other.tag == "textbook") {
+            Debug.Log("hello");
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.tag == "textbook") {
+            Debug.Log("bye");
+        } if (other.tag == "barrier") {
+            Debug.Log("good");
+            PlayerPrefs.SetInt("canMove", 0);
         }
     }
 }
