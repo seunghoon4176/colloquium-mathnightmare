@@ -7,16 +7,14 @@ public class textVisibility : MonoBehaviour
 {
     public Text ment;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         ment.text = "";
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player") {
-            ment.text = "Press Enter to read";
+            ment.text = "Click ↑";
         }
     }
 
@@ -25,9 +23,5 @@ public class textVisibility : MonoBehaviour
         if (other.tag == "Player") {
             ment.text = "";
         }
-    }
-
-    void Update() {
-
     }
 }
