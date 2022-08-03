@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4. corridor.unity
     guid: c83669dd21dddec4b912a839426ab80b
+  - enabled: 1
+    path: Assets/Scenes/4-1. library.unity
+    guid: df83906be4ffcb64b9e60df6512f6f51
   m_configObjects: {}
