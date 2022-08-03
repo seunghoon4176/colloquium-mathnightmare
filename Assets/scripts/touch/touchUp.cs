@@ -16,15 +16,11 @@ public class touchUp : MonoBehaviour
             GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기;
         } if (other.tag == "barrier") { // 장애물이랑 접촉했으면
             PlayerPrefs.SetInt("upMove", 0); // 위쪽이 막혔음을 전달
-        } if (other.tag == "textbook") { // 교과서의 범위에 들어섰다면
-            Debug.Log("hello");
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "textbook") { // 교과서의 범위에서 벗어났다면
-            Debug.Log("bye");
-        } if (other.tag == "barrier") { // 장애물에서 벗어났다면
+        if (other.tag == "barrier") { // 장애물에서 벗어났다면
             PlayerPrefs.SetInt("upMove", 1); // 위쪽으로 이동 가능함을 전달
         }
     }

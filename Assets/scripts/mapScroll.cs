@@ -17,8 +17,8 @@ public class mapScroll : MonoBehaviour
     void Update()
     {
         // 이동 (상하좌우 키: WASD키 혹은 상하좌우 키)
-        moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 추가할 x값 계산
-        moveY = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; // 추가할 y값 계산
+        moveX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime; // 추가할 x값 계산
+        moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime; // 추가할 y값 계산
 
         transform.position = new Vector2(transform.position.x - moveX, transform.position.y - moveY); // 기존의 x값과 y값에 위에서 계산한 값을 더함.
 

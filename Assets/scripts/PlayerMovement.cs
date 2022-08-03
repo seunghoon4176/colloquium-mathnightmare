@@ -8,19 +8,18 @@ public class PlayerMovement : MonoBehaviour
     // x축의 방향으로 이동할 값, y축의 방향으로 이동할 값 저장할 변수 선언
     float moveX, moveY;
     float moveSpeed = 500f; // 이동 속도 500으로 설정
-    
-    public int playerInitX = 0;
-    public int playerInitY = 0;
 
     // 해당 방향으로 이동 가능한지를 저장하는 변수를 PlayerPrefs에 등록. (1: 가능, 0: 불가능)
     void Start() {
         PlayerPrefs.SetInt("leftMove", 1);
         PlayerPrefs.SetInt("rightMove", 1);
         PlayerPrefs.SetInt("upMove", 1);
-        PlayerPrefs.SetInt("downMove", 1);    
+        PlayerPrefs.SetInt("downMove", 1); 
 
-        if (playerInitX != 0 || playerInitY != 0) {
-            transform.position = new Vector2(playerInitX, playerInitY);
+        if (PlayerPrefs.GetInt("playerInitX") != 0 || PlayerPrefs.GetInt("playerInitY") != 0) {
+            transform.position = new Vector2(PlayerPrefs.GetInt("playerInitX"), PlayerPrefs.GetInt("playerInitY"));
+            PlayerPrefs.SetInt("playerInitX", 0);
+            PlayerPrefs.SetInt("playerInitY", 0);  
         }
     }
 
