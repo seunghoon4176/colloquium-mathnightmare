@@ -15,16 +15,19 @@ public class textVisibility : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("1");
-        ment.text = "Press Enter to read";
+        if (other.tag == "Player") {
+            ment.text = "Press Enter to read";
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        ment.text = "";
+        if (other.tag == "Player") {
+            ment.text = "";
+        }
     }
 
     void Update() {
-            
+
     }
 }

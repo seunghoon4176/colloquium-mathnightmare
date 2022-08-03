@@ -9,13 +9,21 @@ public class PlayerMovement : MonoBehaviour
     float moveX, moveY;
     float moveSpeed = 500f; // 이동 속도 500으로 설정
     
+    public int playerInitX = 0;
+    public int playerInitY = 0;
+
     // 해당 방향으로 이동 가능한지를 저장하는 변수를 PlayerPrefs에 등록. (1: 가능, 0: 불가능)
     void Start() {
         PlayerPrefs.SetInt("leftMove", 1);
         PlayerPrefs.SetInt("rightMove", 1);
         PlayerPrefs.SetInt("upMove", 1);
         PlayerPrefs.SetInt("downMove", 1);    
+
+        if (playerInitX != 0 || playerInitY != 0) {
+            transform.position = new Vector2(playerInitX, playerInitY);
+        }
     }
+
 
     // moveX의 유무에 따라 좌표의 변화가 결정됨. 그렇기에 moveX에 1을 곱해주거나 0을 곱해줌으로서 '이동 / 정지'를 결정하려고 x라는 인수에 0또는 1을 받아 사용하는 함수를 정의함.
     void move(int x, int y) {
