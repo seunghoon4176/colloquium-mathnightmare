@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class toInvisible : MonoBehaviour
+public class textVisibility : MonoBehaviour
 {
     public Text ment;
 
@@ -15,12 +15,16 @@ public class toInvisible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("1231");
+        Debug.Log("1");
         ment.text = "Press Enter to read";
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         ment.text = "";
+    }
+
+    void Update() {
+            
     }
 }
