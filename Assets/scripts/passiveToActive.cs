@@ -29,7 +29,6 @@ public class passiveToActive : MonoBehaviour
 
     void triggeredMove() {
         if (canMove == true) {
-            Debug.Log("1");
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
                 PlayerPrefs.SetInt("playerInitX", 950);
                 PlayerPrefs.SetInt("playerInitY", 150);   
