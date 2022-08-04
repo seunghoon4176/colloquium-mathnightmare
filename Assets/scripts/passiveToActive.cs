@@ -19,6 +19,8 @@ public class passiveToActive : MonoBehaviour
             canMove = 1; // 교실로 이동 가능
         } else if (other.name == "libraryDoor") { // 도서관 문이랑 접촉했으면
             canMove = 2; // 도서관으로 이동 가능
+        } else if (other.name == "shopDoor") {
+            canMove = 3; // 상점으로 이동 가능
         }
     }
 
@@ -46,7 +48,9 @@ public class passiveToActive : MonoBehaviour
                 // 플레이어가 여러 위치에 있을 필요가 없어서, 처음부터 에디터에서 알맞은 위치에만 두면 이렇게 해도 됨.
                 // 교실 씬은 프롤로그가 끝나면 책상 근처에 있다가, 나중에 입구 통해서 다시 돌아오면 입구 근처에 위치해야 해서 좌표 지정이 필수였던 거임.
                 
-                SceneManager.LoadScene("4-1. library"); // 다음 씬으로 넘어가기
+                SceneManager.LoadScene("4-1. library");
+            } else if (canMove == 3) { // 상점으로 이동 가능하면
+                SceneManager.LoadScene("4-2. shop");
             }
         }
     }
