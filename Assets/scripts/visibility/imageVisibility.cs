@@ -22,6 +22,6 @@ public class imageVisibility : MonoBehaviour
             color.a = 0f; // 투명화
             goImage.GetComponent<Image>().color = color; // 오브젝트에 반영
         }
-        
+
     }
 }
