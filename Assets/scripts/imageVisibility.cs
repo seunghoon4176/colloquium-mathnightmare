@@ -6,6 +6,11 @@ using UnityEngine.UI;
 // 교과서 페이지 투명화 / 불투명화
 public class imageVisibility : MonoBehaviour
 {  
+    // 맵 넘어갈 때, 게임 종료할 때 페이지를 닫지 않았어도 차후에 영향을 주지 않도록 프로그램 실행과 동시에 초기화
+    void Awake() {
+        PlayerPrefs.SetInt("clicked", 0);
+    }
+
     void Update() {
         GameObject goImage = GameObject.Find("Canvas/Image"); // 이미지 찾아서 변수에 등록
         Color color = goImage.GetComponent<Image>().color; // 이미지의 색 추출
