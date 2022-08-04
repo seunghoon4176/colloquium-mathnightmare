@@ -34,7 +34,7 @@ public class passiveToActive : MonoBehaviour
             if (canMove == 1) { // 교실로 이동 가능하면
                 // 교실의 출입구 근처로 사용자 지정 좌표 변경
                 PlayerPrefs.SetInt("playerInitX", 950);
-                PlayerPrefs.SetInt("playerInitY", 150);
+                PlayerPrefs.SetInt("playerInitY", 110);
 
                 // 이렇게 지정해주고 넘어가면, 넘어간 씬에서 playerMovement 스크립트가 작동하여 그 좌표로 자동 이동함.
                 // 확장성을 충분히 챙긴 스크립트임
