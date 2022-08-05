@@ -9,6 +9,8 @@ public class Init_Splash : MonoBehaviour
     GameObject SplashObj; // 판넬 오브젝트
     Image image; // 판넬 이미지
 
+    [SerializeField] float delay;
+
     private bool checkbool = false; // 투명도 조절 논리형 변수 
 
     void Awake()
@@ -32,7 +34,7 @@ public class Init_Splash : MonoBehaviour
 
         for (int i = 100; i >= 0; i--) // for문 100번 반복 0보다 작을 때까지
         {
-            color.a -= Time.deltaTime * 0.03f; // 이미지 알파 값을 타임 델타 값 * 0.01
+            color.a -= Time.deltaTime * delay; // 이미지 알파 값을 타임 델타 값 * 0.01
             image.color = color; // 판넬 이미지 컬러에 바뀐 알파값 참조
 
             if (image.color.a <= 0) // 만약 판넬 이미지 알파 값이 0보다 작으면
