@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Item> items;
+    public List<Item> items; // 아이템형의 리스트, items 선언.
 
-    [SerializeField]
-    private Transform slotParent;
-    [SerializeField]
-    private Slot[] slots;
+    [SerializeField] private Transform slotParent; // 에디터에서 직접 Bag를 담을 곳
+    [SerializeField] private Slot[] slots;
 
-    private void OnValidate() {
+    private void OnValidate() { // OnValidate: 유니티 에디터에서 바로 작동하는 함수임. 스크립트 실행이 전제되어야 하는 게 아님.
+        // slots에 슬롯들 등록
         slots = slotParent.GetComponentsInChildren<Slot>();
     }
 
     void Awake() {
+        // 스크립트 실행과 동시에 아래에 선언된 FreshSlot 함수 실행
         FreshSlot();
     }
 
