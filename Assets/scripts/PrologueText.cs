@@ -26,7 +26,7 @@ public class PrologueText : MonoBehaviour
             prolText.text = "  " + FullText[clicked]; // 다음 대사를 텍스트에 등록
             clicked += 1; // 다음 대사로 향함
         } else { // 대사가 더 없다면
-            SceneManager.LoadScene("3. classroom"); // 씬 넘어감 -> 프롤로그는 무조건 교실로 넘어가도록 설계했으므로 고정값으로 해도 괜찮음
+            SceneManager.LoadScene("1. classroom"); // 씬 넘어감 -> 프롤로그는 무조건 교실로 넘어가도록 설계했으므로 고정값으로 해도 괜찮음
         }
     }
 }

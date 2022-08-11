@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd494c93a3fa3bc49ab26eb3137b2513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene_name: 4. corridor
+  scene_name: 3. corridor
   x: 0
   y: 0
 --- !u!1 &196848736
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c566b51828645409b579bc5c76918f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene_name: 4. corridor
+  scene_name: 3. corridor
   x: 0
   y: 0
 --- !u!1 &570988752
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd938c7f8df1afe49ba04a5d1efb98a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene_name: 4. corridor
+  scene_name: 3. corridor
   x: 0
   y: 0
 --- !u!1 &1103812848
@@ -5967,7 +5967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988d865ad785a114c9bd468482bef504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene_name: 4. corridor
+  scene_name: 3. corridor
   x: 0
   y: 0
 --- !u!1 &1618902297

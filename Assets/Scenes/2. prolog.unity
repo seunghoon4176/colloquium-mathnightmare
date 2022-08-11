@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8475750}
   - component: {fileID: 8475749}
   - component: {fileID: 8475748}
+  - component: {fileID: 8475751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8475751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &190136616
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,9 +585,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267752135}
-  - component: {fileID: 267752134}
-  - component: {fileID: 267752133}
-  - component: {fileID: 267752136}
   - component: {fileID: 267752137}
   m_Layer: 0
   m_Name: Director
@@ -562,30 +593,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &267752133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267752132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030af9f2e7fab9a45ab5317ea92461fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &267752134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267752132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374d06e0ff80445d2b36c159a8e517fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &267752135
 Transform:
   m_ObjectHideFlags: 0
@@ -601,23 +608,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267752136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267752132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0515e325acab3334cb74766968878ff6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prolText: {fileID: 0}
-  FullText:
-  - a
-  - b
-  clicked: 0
 --- !u!114 &267752137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665c86697a6b5b945b7c0b367d3a70d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene_name: 3. classroom
+  scene_name: 1. classroom
 --- !u!1 &280131854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1234,6 @@ GameObject:
   - component: {fileID: 2108040092}
   - component: {fileID: 2108040094}
   - component: {fileID: 2108040093}
-  - component: {fileID: 2108040095}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1311,20 +1300,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108040091}
   m_CullTransparentMesh: 1
---- !u!114 &2108040095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108040091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0515e325acab3334cb74766968878ff6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prolText: {fileID: 0}
-  FullText:
-  - a
-  - b
-  clicked: 0

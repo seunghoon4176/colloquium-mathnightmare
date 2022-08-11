@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/1. title.unity
     guid: 9c4066f1e430b9a40a0e68ea34fe6e54
   - enabled: 1
-    path: Assets/Scenes/3. classroom.unity
+    path: Assets/Scenes/Rooms/1. classroom.unity
     guid: b138c87b1a1c9b74497c32549ad0fe43
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/5. fight.unity
     guid: 8da4c4dcc82c2b54ab5577205cdf4b0a
   - enabled: 1
@@ -20,13 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1-1. setting.unity
     guid: ecb030f655b2e564ea6a959aad07dd3f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/4. corridor.unity
-    guid: c83669dd21dddec4b912a839426ab80b
-  - enabled: 1
-    path: Assets/Scenes/4-1. library.unity
+    path: Assets/Scenes/Rooms/2. library.unity
     guid: df83906be4ffcb64b9e60df6512f6f51
   - enabled: 1
-    path: Assets/Scenes/4-2. shop.unity
+    path: Assets/Scenes/Rooms/3. shop.unity
     guid: e7ff58c14a7728148b6b34dede9457a6
+  - enabled: 1
+    path: Assets/Scenes/3. corridor.unity
+    guid: 5106798a575a44943ab4eee3a55f57e3
   m_configObjects: {}

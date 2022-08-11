@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class maincameraMovement : MonoBehaviour
 {
+    public GameObject panel;
+
     public void CameraDown()
     {
         GameObject obj = GameObject.Find("Main Camera");  
