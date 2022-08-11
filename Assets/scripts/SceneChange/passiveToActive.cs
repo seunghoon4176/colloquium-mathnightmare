@@ -9,10 +9,10 @@ public class passiveToActive : MonoBehaviour
     // 어디로 이동할 수 있는가? (어느 문에 닿고 있는가) 저장하는 변수
     int canMove = 0;
 
-    private void Start() {
-        PlayerPrefs.SetInt("playerInitX", 0); // 사용자 지정 좌표 초기화
-        PlayerPrefs.SetInt("playerInitY", 0); // 초기화
-    }
+    // GameObject obj;
+
+    private maincameraMovement camera;
+    private Init_Splash panelControl;
 
     void OnTriggerEnter2D(Collider2D other) { // 오브젝트와 접촉하면 실행
         if (other.name == "classDoor") { // 교실 문이랑 접촉했으면
@@ -54,19 +54,17 @@ public class passiveToActive : MonoBehaviour
             } else if (canMove == 3) { // 상점으로 이동 가능하면
                 SceneManager.LoadScene("4-2. shop");
             } else if (canMove == 4) {
-                if (transform.position.y < 237f) {
-                    transform.position = new Vector2(transform.position.x, transform.position.y + 3000);
-                }
+                camera = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
+                camera.CameraUp();
+                panelControl = GameObject.Find("Panel").GetComponent<Init_Splash>();
+                panelControl.panelAwake();
             }
         } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) {
             if (canMove == 4) {
-                if (transform.position.y > -5763) {
-                    Debug.Log(transform.position.y);
-                    transform.position = new Vector2(transform.position.x, transform.position.y - 3000);
-                    
-                    maincameraMovement Cameraset = new maincameraMovement();
-                    Cameraset.CameraSetPosition();
-                }
+                camera = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
+                camera.CameraDown();
+                panelControl = GameObject.Find("Panel").GetComponent<Init_Splash>();
+                panelControl.panelAwake();
             }
         }
     }
