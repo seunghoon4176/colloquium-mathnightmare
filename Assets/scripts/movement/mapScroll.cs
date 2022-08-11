@@ -6,15 +6,15 @@ using UnityEngine;
 public class mapScroll : MonoBehaviour
 {
     // 에디터에서 값을 조절할 수 있도록 범위를 지정해줌.
-    [SerializeField] [Range(-5000f, 5000f)] float minX = -132f; // 맵의 x좌표의 최솟값
-    [SerializeField] [Range(-5000f, 5000f)] float maxX = 229f; // 맵의 x좌표의 최댓값
-    [SerializeField] [Range(0f, 500f)] float minY = 55f; // 맵의 y좌표의 최솟값
-    [SerializeField] [Range(0f, 500f)] float maxY = 55f; // 맵의 y좌표의 최댓값
+    [SerializeField] float minX = -132f; // 맵의 x좌표의 최솟값
+    [SerializeField] float maxX = 229f; // 맵의 x좌표의 최댓값
+    [SerializeField] float minY = 55f; // 맵의 y좌표의 최솟값
+    [SerializeField] float maxY = 55f; // 맵의 y좌표의 최댓값
 
     float moveX, moveY; // x축의 방향으로 이동할 값, y축의 방향으로 이동할 값 저장할 변수 선언 (계속 계산하여 갱신함)
     
     [Header("이동 속도 조절")]
-    [SerializeField] [Range(1f, 2000f)] float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~2000으로 설정 가능
+    [SerializeField] float moveSpeed = 500f; // 이동 속도 500으로 설정. 에디터에서 1~2000으로 설정 가능
 
     void Start() {
         // 사용자가 좌표를 직접 지정했으면

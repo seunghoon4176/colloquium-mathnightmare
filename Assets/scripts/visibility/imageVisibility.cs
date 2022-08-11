@@ -12,7 +12,7 @@ public class imageVisibility : MonoBehaviour
     }
 
     void Update() {
-        GameObject goImage = GameObject.Find("Canvas/Image"); // 이미지 찾아서 변수에 등록
+        GameObject goImage = GameObject.Find("Canvas/textbookPage"); // 이미지 찾아서 변수에 등록
         Color color = goImage.GetComponent<Image>().color; // 이미지의 색 추출
         
         if (PlayerPrefs.GetInt("clicked") == 1) { // textbookClick 스크립트에서 저장한 정보를 가져와서, 교과서쪽 버튼을 클릭했다면 실행

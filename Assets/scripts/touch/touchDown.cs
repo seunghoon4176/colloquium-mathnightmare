@@ -24,6 +24,8 @@ public class touchDown : MonoBehaviour
         
         } if (other.tag == "barrier") { // 장애물이랑 접촉했으면
             PlayerPrefs.SetInt("downMove", 0); // 아래쪽이 막혔음을 전달
+        } if (other.tag == "items") {
+            
         }
     }
 

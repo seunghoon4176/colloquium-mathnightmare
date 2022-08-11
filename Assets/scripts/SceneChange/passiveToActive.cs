@@ -21,6 +21,8 @@ public class passiveToActive : MonoBehaviour
             canMove = 2; // 도서관으로 이동 가능
         } else if (other.name == "shopDoor") {
             canMove = 3; // 상점으로 이동 가능
+        } else if (other.name == "stairs") {
+            canMove = 4; // 계단 이동
         }
     }
 
@@ -51,6 +53,20 @@ public class passiveToActive : MonoBehaviour
                 SceneManager.LoadScene("4-1. library");
             } else if (canMove == 3) { // 상점으로 이동 가능하면
                 SceneManager.LoadScene("4-2. shop");
+            } else if (canMove == 4) {
+                if (transform.position.y < 237f) {
+                    transform.position = new Vector2(transform.position.x, transform.position.y + 3000);
+                }
+            }
+        } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) {
+            if (canMove == 4) {
+                if (transform.position.y > -5763) {
+                    Debug.Log(transform.position.y);
+                    transform.position = new Vector2(transform.position.x, transform.position.y - 3000);
+                    
+                    maincameraMovement Cameraset = new maincameraMovement();
+                    Cameraset.CameraSetPosition();
+                }
             }
         }
     }
