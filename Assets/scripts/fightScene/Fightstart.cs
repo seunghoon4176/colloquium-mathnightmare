@@ -33,7 +33,7 @@ public class Fightstart : MonoBehaviour
     }
 
     // 각 몬스터의 정보를 저장하고, 인수에 들어온 값(= 몬스터 종류)에 따라 출현 문구 설정
-    public void monster_setting(int input_value)
+    void monster_setting(int input_value)
     {
         // 각 몬스터의 정보 저장
         monster sin;
