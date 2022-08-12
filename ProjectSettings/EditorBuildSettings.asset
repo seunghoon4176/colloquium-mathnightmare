@@ -11,14 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/1. classroom.unity
     guid: b138c87b1a1c9b74497c32549ad0fe43
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/4. fight.unity
     guid: 8da4c4dcc82c2b54ab5577205cdf4b0a
   - enabled: 1
     path: Assets/Scenes/2. prolog.unity
     guid: db9ffa1ec49a8784daede28f35c1a491
   - enabled: 1
-    path: Assets/Scenes/1-1. setting.unity
+    path: Assets/Scenes/1-1. Setting.unity
     guid: ecb030f655b2e564ea6a959aad07dd3f
   - enabled: 0
     path: 
