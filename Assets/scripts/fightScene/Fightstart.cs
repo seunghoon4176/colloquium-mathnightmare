@@ -88,7 +88,7 @@ public class Fight : MonoBehaviour
         boss.name = "보스";
         boss.appearText = "보스가 나타났다!";
         boss.info = ".";
-        boss.tip = "앞서 공부한 내용을 떠올리자.";
+        boss.tip = "그동안의 개념이 전부 사용된 보스 같다!";
         boss.atk = 100;
         boss.def = 80;
         
