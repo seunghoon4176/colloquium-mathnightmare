@@ -15,7 +15,7 @@ public struct monster
     }
 
 // 전투 씬 메인 클래스
-public class Fight : MonoBehaviour
+public class Fightstart : MonoBehaviour
 {
     public Text appearText; // 출현 문구 저장할 변수 선언
 
