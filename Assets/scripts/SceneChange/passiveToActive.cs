@@ -11,7 +11,7 @@ public class passiveToActive : MonoBehaviour
 
     public GameObject obj;
 
-    private maincameraMovement camera;
+    private maincameraMovement cameras;
     private Init_Splash panelControl;
 
     void OnTriggerEnter2D(Collider2D other) { // 오브젝트와 접촉하면 실행
@@ -54,8 +54,8 @@ public class passiveToActive : MonoBehaviour
             } else if (canMove == 3) { // 상점으로 이동 가능하면
                 SceneManager.LoadScene("3. shop");
             } else if (canMove == 4) {
-                camera = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
-                camera.CameraUp();
+                cameras = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
+                cameras.CameraUp();
 
                 obj.SetActive(true);
                 panelControl = GameObject.Find("Panel").GetComponent<Init_Splash>();
@@ -63,8 +63,8 @@ public class passiveToActive : MonoBehaviour
             }
         } else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) {
             if (canMove == 4) {
-                camera = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
-                camera.CameraDown();
+                cameras = GameObject.Find("Main Camera").GetComponent<maincameraMovement>();
+                cameras.CameraDown();
 
                 obj.SetActive(true);
                 panelControl = GameObject.Find("Panel").GetComponent<Init_Splash>();
