@@ -12,6 +12,7 @@ public struct monster
         public string tip;
         public int atk;
         public int def;
+        public int hp;
     }
 
 // 전투 씬 메인 클래스
@@ -43,6 +44,7 @@ public class Fightstart : MonoBehaviour
         sin.tip = "Sin 함수의 개형은 ...";
         sin.atk = 10;
         sin.def = 8;
+        sin.hp = 20;
 
         monster cos;
         cos.name = "Cos 클롭스";
@@ -51,6 +53,7 @@ public class Fightstart : MonoBehaviour
         cos.tip = "Cos 함수의 개형은 ...";
         cos.atk = 12;
         cos.def = 10;
+        cos.hp = 20;
 
         monster tan;
         tan.name = "Tan 클롭스";
@@ -59,6 +62,7 @@ public class Fightstart : MonoBehaviour
         tan.tip = "tan 함수의 개형은 ...";
         tan.atk = 15;
         tan.def = 12;
+        tan.hp = 20;
 
         monster sincos;
         sincos.name = "SinCos 클롭스";
@@ -67,6 +71,7 @@ public class Fightstart : MonoBehaviour
         sincos.tip = "앞서 공부한 내용을 떠올리자.";
         sincos.atk = 20;
         sincos.def = 18;
+        sincos.hp = 100;
 
         monster costan;
         costan.name = "CosTan 클롭스";
@@ -75,6 +80,7 @@ public class Fightstart : MonoBehaviour
         costan.tip = "앞서 공부한 내용을 떠올리자.";
         costan.atk = 25;
         costan.def = 20;
+        costan.hp = 100;
 
         monster sintan;
         sintan.name = "SinTan 클롭스";
@@ -83,6 +89,7 @@ public class Fightstart : MonoBehaviour
         sintan.tip = "앞서 공부한 내용을 떠올리자.";
         sintan.atk = 30;
         sintan.def = 25;
+        sintan.hp = 100;
 
         monster boss;
         boss.name = "보스";
@@ -91,6 +98,7 @@ public class Fightstart : MonoBehaviour
         boss.tip = "그동안의 개념이 전부 사용된 보스 같다!";
         boss.atk = 100;
         boss.def = 80;
+        boss.hp = 500;
         
         // 몬스터 종류에 따라 출현 문구 설정
         monster[] monsterNameList = new monster[]{sin, cos, tan, sincos, costan, sintan, boss};
