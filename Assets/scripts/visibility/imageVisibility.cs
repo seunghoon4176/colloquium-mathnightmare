@@ -22,10 +22,10 @@ public class imageVisibility : MonoBehaviour
         GameObject WatchButton = GameObject.Find("Canvas/textbookPage/WatchButton");
         GameObject explain = GameObject.Find("Canvas/textbookPage/explain");
 
-        GameObject AnswerInputText = GameObject.Find("Canvas/textbookPage/AnswerInput/TextArea");
-        GameObject SkipButtonText = GameObject.Find("Canvas/textbookPage/SkipButton/Text");
-        GameObject ConfirmButtonText = GameObject.Find("Canvas/textbookPage/ConfirmButton/Text");
-        GameObject WatchButtonText = GameObject.Find("Canvas/textbookPage/WatchButton/Text");
+        //GameObject AnswerInputText = GameObject.Find("Canvas/textbookPage/AnswerInput/TextArea");
+        //GameObject SkipButtonText = GameObject.Find("Canvas/textbookPage/SkipButton/Text");
+        //GameObject ConfirmButtonText = GameObject.Find("Canvas/textbookPage/ConfirmButton/Text");
+        //GameObject WatchButtonText = GameObject.Find("Canvas/textbookPage/WatchButton/Text");
 
         Color color = goImage.GetComponent<Image>().color; // 이미지의 색 추출
         
@@ -35,32 +35,34 @@ public class imageVisibility : MonoBehaviour
             problem.GetComponent<Image>().color = color;
             closebutton.GetComponent<Image>().color = color;
 
-            AnswerInput.GetComponent<Image>().color = color;
-            SkipButton.GetComponent<Image>().color = color;
-            ConfirmButton.GetComponent<Image>().color = color;
-            WatchButton.GetComponent<Image>().color = color;
-            explain.GetComponent<Text>().color = color;
+            AnswerInput.SetActive(true);
+            //AnswerInput.GetComponent<Image>().color = color;
+            //SkipButton.GetComponent<Image>().color = color;
+            //ConfirmButton.GetComponent<Image>().color = color;
+            //WatchButton.GetComponent<Image>().color = color;
+            //explain.GetComponent<Text>().color = color;
 
-            AnswerInputText.GetComponent<Text>().color = color;
-            SkipButtonText.GetComponent<Text>().color = color;
-            ConfirmButtonText.GetComponent<Text>().color = color;
-            WatchButtonText.GetComponent<Text>().color = color;
+            //AnswerInputText.GetComponent<Text>().color = color;
+            //SkipButtonText.GetComponent<Text>().color = color;
+            //ConfirmButtonText.GetComponent<Text>().color = color;
+            //WatchButtonText.GetComponent<Text>().color = color;
         } else if (PlayerPrefs.GetInt("clicked") == 0) { // 페이지를 닫는 버튼을 클릭했다면 실행
             color.a = 0f; // 투명화
             goImage.GetComponent<Image>().color = color; // 오브젝트에 반영
             problem.GetComponent<Image>().color = color;
             closebutton.GetComponent<Image>().color = color;
 
-            AnswerInput.GetComponent<Image>().color = color;
-            SkipButton.GetComponent<Image>().color = color;
-            ConfirmButton.GetComponent<Image>().color = color;
-            WatchButton.GetComponent<Image>().color = color;
-            explain.GetComponent<Text>().color = color;
+            AnswerInput.SetActive(false);
+            //AnswerInput.GetComponent<Image>().color = color;
+            //SkipButton.GetComponent<Image>().color = color;
+            //ConfirmButton.GetComponent<Image>().color = color;
+            //WatchButton.GetComponent<Image>().color = color;
+            //explain.GetComponent<Text>().color = color;
  
-            AnswerInputText.GetComponent<Text>().color = color;
-            SkipButtonText.GetComponent<Text>().color = color;
-            ConfirmButtonText.GetComponent<Text>().color = color;
-            WatchButtonText.GetComponent<Text>().color = color;
+            //AnswerInputText.GetComponent<Text>().color = color;
+            //SkipButtonText.GetComponent<Text>().color = color;
+            //ConfirmButtonText.GetComponent<Text>().color = color;
+            //WatchButtonText.GetComponent<Text>().color = color;
         }
 
     }
