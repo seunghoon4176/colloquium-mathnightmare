@@ -493,6 +493,7 @@ RectTransform:
   - {fileID: 1727236323}
   - {fileID: 490458112}
   - {fileID: 476687249}
+  - {fileID: 1386462414}
   - {fileID: 649734447}
   - {fileID: 957124778}
   m_Father: {fileID: 0}
@@ -998,7 +999,6 @@ RectTransform:
   m_Children:
   - {fileID: 2016545820}
   - {fileID: 1159380478}
-  - {fileID: 1386462414}
   - {fileID: 1444913225}
   - {fileID: 914640844}
   - {fileID: 802520673}
@@ -1062,6 +1062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a6cfd42193e9249b38970b9fd8409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lectures: {fileID: 1473206168}
+  confirm: {fileID: 2131541635}
+  skip: {fileID: 1934537365}
+  change: {fileID: 1040929804}
 --- !u!1 &483809687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1252,7 @@ GameObject:
   - component: {fileID: 503221980}
   - component: {fileID: 503221979}
   m_Layer: 5
-  m_Name: Text
+  m_Name: input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1971,7 +1975,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 210758727}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2105,7 +2109,7 @@ RectTransform:
   m_Children:
   - {fileID: 1473206167}
   m_Father: {fileID: 476687249}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2227,7 +2231,7 @@ RectTransform:
   m_Children:
   - {fileID: 2131541634}
   m_Father: {fileID: 476687249}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2347,7 +2351,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 476687249}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2566,7 +2570,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 210758727}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2833,7 +2837,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Change problem
+  m_Text: '
+
+'
 --- !u!222 &1040929805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3438,7 +3444,7 @@ RectTransform:
   m_Children:
   - {fileID: 1040929803}
   m_Father: {fileID: 476687249}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3502,7 +3508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3849,8 +3855,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2031443528}
-  m_Father: {fileID: 476687249}
-  m_RootOrder: 2
+  m_Father: {fileID: 210758727}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3968,7 +3974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4026,7 +4032,7 @@ RectTransform:
   m_Children:
   - {fileID: 1934537364}
   m_Father: {fileID: 476687249}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4324,7 +4330,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Watch lectures
+  m_Text: '
+
+'
 --- !u!222 &1473206169
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5207,7 +5215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Skip >>
+  m_Text: 
 --- !u!222 &1934537366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5267,7 +5275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5416,7 +5424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Confirm Answer
+  m_Text: 
 --- !u!222 &2131541636
 CanvasRenderer:
   m_ObjectHideFlags: 0
