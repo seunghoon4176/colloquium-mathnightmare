@@ -20,12 +20,12 @@ public class imageVisibility : MonoBehaviour
         if (PlayerPrefs.GetInt("clicked") == 1) { // textbookClick 스크립트에서 저장한 정보를 가져와서, 교과서쪽 버튼을 클릭했다면 실행
             color.a = 1f; // 불투명한 색으로 변경
             goImage.GetComponent<Image>().color = color; // 오브젝트에 반영
-            problem.GetComponent<Image>().color = color;
+            //problem.GetComponent<Image>().color = color;
             closebutton.GetComponent<Image>().color = color;
         } else if (PlayerPrefs.GetInt("clicked") == 0) { // 페이지를 닫는 버튼을 클릭했다면 실행
             color.a = 0f; // 투명화
             goImage.GetComponent<Image>().color = color; // 오브젝트에 반영
-            problem.GetComponent<Image>().color = color;
+            //problem.GetComponent<Image>().color = color;
             closebutton.GetComponent<Image>().color = color;
             //아니 저 클로즈버튼 개새끼가 앞으로 오질 않아
         }
