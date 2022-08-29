@@ -999,6 +999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256130616}
   - component: {fileID: 256130617}
+  - component: {fileID: 256130618}
   m_Layer: 5
   m_Name: inventorySystem
   m_TagString: Untagged
@@ -1039,6 +1040,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62ac7e34aa370443b2bf482d91ac652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &256130618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256130615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec3815ca5bfa604d93cc6129c7d1bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 1a1f1092a1b179449991052360423c0b, type: 2}
+  - {fileID: 11400000, guid: 38df8f0e8215f144cb03df509ed5e6f4, type: 2}
+  slotParent: {fileID: 1766337321}
+  slots:
+  - {fileID: 384032156}
+  - {fileID: 2068322747}
+  - {fileID: 570988754}
+  - {fileID: 92341082}
+  - {fileID: 1103812850}
+  - {fileID: 864279558}
+  - {fileID: 751961015}
+  - {fileID: 1139126738}
+  - {fileID: 1675469727}
+  - {fileID: 1618902299}
 --- !u!1 &263121608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,6 +4844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
