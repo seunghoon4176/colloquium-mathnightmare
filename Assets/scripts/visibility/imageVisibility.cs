@@ -38,7 +38,7 @@ public class imageVisibility : MonoBehaviour
             
             lectures.text = "Watching lectures";
             confirm.text = "Confirm answer";
-            skip.text = "Skip>>";
+            skip.text = "Skip problem";
             change.text = "Change Problem";
 
         
