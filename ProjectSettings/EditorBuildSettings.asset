@@ -18,18 +18,18 @@ EditorBuildSettings:
     path: Assets/Scenes/2. prolog.unity
     guid: db9ffa1ec49a8784daede28f35c1a491
   - enabled: 1
-    path: Assets/Scenes/1-1. Setting.unity
+    path: Assets/Scenes/1-1. setting.unity
     guid: ecb030f655b2e564ea6a959aad07dd3f
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Rooms/2. library.unity
-    guid: df83906be4ffcb64b9e60df6512f6f51
   - enabled: 1
     path: Assets/Scenes/Rooms/3. shop.unity
     guid: e7ff58c14a7728148b6b34dede9457a6
   - enabled: 1
     path: Assets/Scenes/3. corridor.unity
     guid: 5106798a575a44943ab4eee3a55f57e3
+  - enabled: 1
+    path: Assets/Scenes/Rooms/2. library.unity
+    guid: df83906be4ffcb64b9e60df6512f6f51
   m_configObjects: {}
