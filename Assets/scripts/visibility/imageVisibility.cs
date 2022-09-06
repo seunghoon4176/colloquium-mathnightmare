@@ -28,10 +28,13 @@ public class imageVisibility : MonoBehaviour
         GameObject closebutton = GameObject.Find("Canvas/textbookPage/imageCloser");
         GameObject problem = GameObject.Find("Canvas/textbookPage/problem"); // 이미지 찾아서 변수에 등록
         
+        /*
         GameObject lectures = GameObject.Find("Canvas/textbookPage/WatchButton");
         GameObject confirm = GameObject.Find("Canvas/textbookPage/ConfirmButton");
         GameObject skip = GameObject.Find("Canvas/textbookPage/SkipButton");
         GameObject change = GameObject.Find("Canvas/textbookPage/ChangeProblem"); //요 문제풀이의 버튼들을 다 움직이려고 가져옴.
+        */
+        
 
         //밑에꺼는 추후 input박스 만들려고 냅둠 일단 보류
         //GameObject input = GameObject.Find("Canvas/textbookPage/AnswerInput/TextArea");
