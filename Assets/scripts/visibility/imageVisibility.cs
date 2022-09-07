@@ -22,6 +22,9 @@ public class imageVisibility : MonoBehaviour
         // 요기는 이제 처음 실행하면 각  버튼을 x가 2000씩 옮겨진 코드를 넣어야 함.
         
     }
+     
+    
+    
 
     void Update() {
         GameObject goImage = GameObject.Find("Canvas/textbookPage");
@@ -72,5 +75,6 @@ public class imageVisibility : MonoBehaviour
             //닫았다면 다시 위에 awake에 들어가 있을, 얘네를 2000씩 미는 코드를 넣어야 함.
         }
 
+        GameObject.Find("Canvas").transform.Find("director").gameObject.SetActive(true);
     }
 }
