@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class problemmanager : MonoBehaviour
 {
     public Text problem;
+    public bool solveproblem;
     public int prnumber;
     public GameObject change;
+    public GameObject answerbox;
     // Start is called before the first frame update
     void Start()
     {
         problem.text = "press the next button to learn.";
         prnumber = 0;
+        solveproblem = false;
     }
 
     // Update is called once per frame
@@ -20,30 +24,150 @@ public class problemmanager : MonoBehaviour
     {
     }
 
+    public void Dontsolveproblembutnext(){
+        problem.text = "Let's back to the problem. or, use skip. let's back to problem.";
+    }
+
     public void Nextproblem(){
-
-        prnumber += 1; 
-
-        if(prnumber == 1){
-            problem.text = "1 problem";
+        if(prnumber == 6){
+            problem.text = "This is final problem.";
+        }else{
+            if(solveproblem == true){
+            prnumber += 1; 
+            loadpr();
+        }else{
+            problem.text = "You don't solve the problem.";
+            Invoke("Dontsolveproblembutnext",3f);
+            Invoke("loadpr",6f);
+            
         }
-        else if(prnumber == 2){
-            problem.text = "2 problem";
-        }
-        else if(prnumber == 3){
-            problem.text = "3 problem";
-        }
-        else if(prnumber == 4){
-            problem.text = "4 problem";
-        }
-        else if(prnumber == 5){
-            problem.text = "5 problem";
-        }
-        //여기에 문제 추가 가능.
-        
-        else if(prnumber == 6){
-            problem.text = "final problem.";
-            prnumber = 0;
         }
     }
+
+    public void Checkanswer(){
+        string answer = answerbox.GetComponent<TMP_InputField>().text;
+        Debug.Log(prnumber);
+        Debug.Log(answer);
+
+        if(prnumber == 1){
+            if(answer == "1"){
+                problem.text = "Right!";
+                prnumber += 1; 
+                Invoke("loadpr",2f);
+                solveproblem = true;
+            }else{
+                problem.text = "Wrong!";
+                Invoke("loadpr",2f);
+            }
+            }
+            else if(prnumber == 2){
+                if(answer == "2"){
+                problem.text = "Right!";
+                prnumber += 1; 
+                Invoke("loadpr",2f);
+                solveproblem = true;
+                }else{
+                problem.text = "Wrong!";
+                Invoke("loadpr",2f);
+                }
+            }
+            else if(prnumber == 3){
+                if(answer == "3"){
+                problem.text = "Right!";
+                prnumber += 1; 
+                Invoke("loadpr",2f);
+                solveproblem = true;
+                }else{
+                problem.text = "Wrong!";
+                Invoke("loadpr",2f);
+                }
+            }
+            else if(prnumber == 4){
+                if(answer == "4"){
+                problem.text = "Right!";
+                prnumber += 1; 
+                Invoke("loadpr",2f);
+                solveproblem = true;
+                }else{
+                problem.text = "Wrong!";
+                Invoke("loadpr",2f);
+                }
+            }
+            else if(prnumber == 5){
+                if(answer == "5"){
+                problem.text = "Right!";
+                prnumber += 1; 
+                Invoke("loadpr",2f);
+                solveproblem = true;
+                }else{
+                problem.text = "Wrong!";
+                Invoke("loadpr",2f);
+                }
+            }else if(prnumber == 0){
+                problem.text = "plz choose problem.";
+            }
+        
+    } 
+
+    public void SkipProblem(){
+        prnumber += 1; 
+        loadpr();
+        
+    } 
+
+
+    public void loadpr(){
+        if(prnumber == 1){
+                problem.text = "1 problem";
+                solveproblem = false;
+            }
+            else if(prnumber == 2){
+                problem.text = "2 problem";
+                solveproblem = false;
+            }
+            else if(prnumber == 3){
+                problem.text = "3 problem";
+                solveproblem = false;
+            }
+            else if(prnumber == 4){
+                problem.text = "4 problem";
+                solveproblem = false;
+            }
+            else if(prnumber == 5){
+                problem.text = "5 problem";
+                solveproblem = false;
+            }
+            else if(prnumber == 6){
+                problem.text = "final problem.";
+                solveproblem = false;
+                prnumber = 0;
+            }else if(prnumber == 0){
+                problem.text = "Problem not choosed.";
+                solveproblem = false;
+            }
+    }
+
+    public void Watchlecture(){
+        if(prnumber == 1){
+            Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+            }
+            else if(prnumber == 2){
+                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+            }
+            else if(prnumber == 3){
+                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+            }
+            else if(prnumber == 4){
+               Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+            }
+            else if(prnumber == 5){
+                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+            }
+            else if(prnumber == 6){
+               Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
+
+            }else if(prnumber == 0){
+                problem.text = "Problem not choosed.";
+            }
+    } 
 }
