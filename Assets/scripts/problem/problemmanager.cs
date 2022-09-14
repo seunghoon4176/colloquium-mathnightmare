@@ -46,13 +46,10 @@ public class problemmanager : MonoBehaviour
 
     public void Checkanswer(){
         string answer = answerbox.GetComponent<TMP_InputField>().text;
-        Debug.Log(prnumber);
-        Debug.Log(answer);
 
         if(prnumber == 1){
             if(answer == "1"){
-                problem.text = "Right!";
-                prnumber += 1; 
+                problem.text = "Right!"; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
             }else{
@@ -63,7 +60,6 @@ public class problemmanager : MonoBehaviour
             else if(prnumber == 2){
                 if(answer == "2"){
                 problem.text = "Right!";
-                prnumber += 1; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
                 }else{
@@ -74,7 +70,6 @@ public class problemmanager : MonoBehaviour
             else if(prnumber == 3){
                 if(answer == "3"){
                 problem.text = "Right!";
-                prnumber += 1; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
                 }else{
@@ -85,7 +80,6 @@ public class problemmanager : MonoBehaviour
             else if(prnumber == 4){
                 if(answer == "4"){
                 problem.text = "Right!";
-                prnumber += 1; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
                 }else{
@@ -96,7 +90,6 @@ public class problemmanager : MonoBehaviour
             else if(prnumber == 5){
                 if(answer == "5"){
                 problem.text = "Right!";
-                prnumber += 1; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
                 }else{
