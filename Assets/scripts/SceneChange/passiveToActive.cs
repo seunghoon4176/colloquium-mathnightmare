@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// 정체되어 있는 문에 기능을 부여하는, 말하자면 수동적인 문을 능동적으로 바꾸는 스크립트.
+
 public class passiveToActive : MonoBehaviour
 {
-    // 어디로 이동할 수 있는가? (어느 문에 닿고 있는가) 저장하는 변수
+    // 어디로 이동할 수 있는지 (어느 문에 닿고 있는가) 저장하는 변수
     int canMove = 0;
 
     public GameObject obj;
