@@ -49,7 +49,7 @@ public class problemmanager : MonoBehaviour
         string answer = answerbox.GetComponent<TMP_InputField>().text;
 
         if(prnumber == 1){
-            if(answer == "1"){
+            if(answer == "4"){
                 problem.text = "Right!"; 
                 Invoke("loadpr",2f);
                 solveproblem = true;
@@ -112,7 +112,7 @@ public class problemmanager : MonoBehaviour
 
     public void loadpr(){
         if(prnumber == 1){
-                problem.text = "1 problem";
+                problem.text = "1. 반지름의 길이가 6이고 호의 길이가 4ㅠ인 부채꼴의 중심각의 크기는? \n\n ① ㅠ/6 \t ② ㅠ/3 \t ③ ㅠ/2 \t ④ 2ㅠ/3 \t ⑤ 5ㅠ/6";
                 solveproblem = false;
             }
             else if(prnumber == 2){
