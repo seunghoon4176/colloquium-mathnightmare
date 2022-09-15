@@ -141,26 +141,6 @@ public class problemmanager : MonoBehaviour
     }
 
     public void Watchlecture(){
-        if(prnumber == 1){
-            Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-            }
-            else if(prnumber == 2){
-                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-            }
-            else if(prnumber == 3){
-                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-            }
-            else if(prnumber == 4){
-               Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-            }
-            else if(prnumber == 5){
-                Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-            }
-            else if(prnumber == 6){
-               Application.OpenURL("https://www.youtube.com/?gl=KR&hl=ko");
-
-            }else if(prnumber == 0){
-                problem.text = "Problem not choosed.";
-            }
+        
     } 
 }
