@@ -2471,6 +2471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 490458111}
+  ShopScreen: {fileID: 476687248}
+  NPC: {fileID: 649734446}
 --- !u!4 &483809689
 Transform:
   m_ObjectHideFlags: 0

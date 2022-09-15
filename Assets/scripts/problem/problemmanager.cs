@@ -14,8 +14,9 @@ public class problemmanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        problem.text = "press the next button to learn.";
-        prnumber = 0;
+        //problem.text = "press the next button to learn.";
+        prnumber = 1;
+        loadpr();
         solveproblem = false;
     }
 
