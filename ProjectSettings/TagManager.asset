@@ -10,6 +10,13 @@ TagManager:
   - barrier
   - passiveDoor
   - items
+  - sin
+  - cos
+  - tan
+  - sincos
+  - costan
+  - sintan
+  - boss
   layers:
   - Default
   - TransparentFX

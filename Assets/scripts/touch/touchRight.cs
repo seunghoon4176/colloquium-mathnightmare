@@ -18,10 +18,29 @@ public class touchRight : MonoBehaviour
             PlayerPrefs.SetInt("playerInitX", x);
             PlayerPrefs.SetInt("playerInitY", y);  
             SceneManager.LoadScene(scene_name); // 에디터에서 입력한 씬으로 넘어가기
-        } if (other.tag == "Monster") { // 몬스터랑 접촉했으면
-            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기;
         } if (other.tag == "barrier") { // 장애물이랑 접촉했으면
             PlayerPrefs.SetInt("rightMove", 0); // 오른쪽이 막혔음을 전달
+        } if (other.tag == "sin") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sin"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "cos") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("cos"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "tan") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("tan"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "sincos") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sincos"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "costan") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("costan"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "sintan") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("sintan"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
+        } if (other.tag == "boss") { // '몬스터'랑 접촉했으면
+            GameObject.Find("scriptTemp").GetComponent<change_to_fight>().ButtonClick("boss"); // "sin"을 인수로 전달하여 전투씬에 입장하기
+        
         }
     }
 

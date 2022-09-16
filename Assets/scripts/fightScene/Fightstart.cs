@@ -2,17 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-// 몬스터의 데이터 형식화
-public struct monster
-    {
-        public string name;
-        public string appearText;
-        public int atk;
-        public int def;
-        public int hp;
-    }
-
+using UnityEngine.SceneManagement;
 // 전투 씬 메인 클래스
 public class Fightstart : MonoBehaviour
 {
@@ -25,18 +15,31 @@ public class Fightstart : MonoBehaviour
     public int nowweapon;
     public int monsterIndex;
     public int Gold;
-    public int damage;
+    //요기까진 수치들 가져오기
 
-    public Text appearText; // 출현 문구 저장할 변수 선언
+    public Text appearText; 
     public Text nowSwordLevel;
     public Text nowSpearLevel;
     public Text ATKState;
     public Text DEFState;
     public Text HpState;
     public Text nowGold;
+    //요기까진 텍스트 연동 
 
-    public string Turn;
-    public string Act;
+    public GameObject atack;
+    public GameObject talk;
+    public GameObject run;
+    public GameObject set;
+    public int runpercent;
+    //전투 시스템에 필요한 것들
+
+    public string monsterName;
+    public int atk;
+    public int def;
+    public int hp;
+    public int damage;
+    public Text MonsterHP;
+    //몬스터꺼
 
     void Awake(){
         NowHP = PlayerPrefs.GetInt("NowHP");
@@ -56,6 +59,129 @@ public class Fightstart : MonoBehaviour
         nowGold.text = Gold + "G";
     }
 
+    void Start()
+    {
+        monsterName = PlayerPrefs.GetString("monsterNames"); // 전투 씬으로 넘어오기 전에 입력받은 몬스터의 이름을 가져옴 (change_to_fight 스크립트 참고)
+        Debug.Log(monsterName);
+        if (monsterName == "sin"){
+            atk = 10;
+            def = 3;
+            hp = 10;
+        }
+        if (monsterName == "cos"){
+            atk = 5;
+            def = 2;
+            hp = 10;
+        }
+        if (monsterName == "tan"){
+            atk = 3;
+            def = 3;
+            hp = 15;
+        }
+        if (monsterName == "sincos"){
+            atk = 40;
+            def = 8;
+            hp = 100;
+        }
+        if (monsterName == "sintan"){
+            atk = 20;
+            def = 8;
+            hp = 100;
+        }
+        if (monsterName == "costan"){
+            atk = 15;
+            def = 8;
+            hp = 200;
+        }
+        if (monsterName == "boss"){
+            atk = 66;
+            def = 66;
+            hp = 666;
+        }
+        MonsterHP.text = "Enemi Monster's HP:" + hp;
+        PlayerTurn();
+    }
+
+    //요 안에 4가지 버튼을 담는다. 
+    public void Playeratack(){
+        MonsterTurn();
+        damage = ATK - def;
+        appearText.text = "사용자의 공격!" + damage + "데미지를 입혔다!";
+        hp -= damage;
+        MonsterHP.text = "Enemi Monster's HP:" + hp;
+        if (hp <= 0){
+            appearText.text = "몬스터를  처치했다! 100골드를 획득했다!";
+            Invoke("CloseBattle",2f);
+            Gold += 100;
+        }else{
+            Invoke("Monsteratack",2f);
+        }
+    }
+
+    public void PlayerTalk(){
+        MonsterTurn();
+        if (runpercent >= 90){
+            appearText.text = "괴물과 소통했습니다! 괴물이 그저 물러갔습니다! 50 골드 획득!";
+            Gold += 50;
+            Invoke("CloseBattle",2f);
+        }else{
+            appearText.text = "대화가 실패했습니다!";
+            Invoke("Monsteratack",2f);
+        }
+    }
+
+    public void PlayerRUN(){
+        MonsterTurn();
+        runpercent = Random.Range(0,101);
+        if (runpercent >= 50){
+            appearText.text = "무사히 도망쳤습니다!";
+            Invoke("CloseBattle",2f);
+        }else{
+            appearText.text = "도망이 실패했습니다!";
+            Invoke("Monsteratack",2f);
+        }
+    }
+    
+    public void PlayerSetting(){
+        MonsterTurn();
+        appearText.text = "과목과 단원이 더 있지 않습니다.";
+        Invoke("Monsteratack",2f);
+    }
+    //끝.
+
+    public void Monsteratack(){
+        MonsterTurn();
+        damage = atk - DEF;
+        appearText.text = "몬스터의 공격!" + damage + "데미지를 입었다!";
+        NowHP -= damage;
+        ReloadStats();
+        if (NowHP <= 0){
+            appearText.text = "몬스터에게 당했다!";
+            Invoke("CloseBattle",2f);
+        }else{
+            Invoke("PlayerTurn",2f);
+        }
+    }
+
+    void CloseBattle(){
+        SceneManager.LoadScene("1. classroom");
+    }
+
+    void MonsterTurn(){
+        this.atack.transform.gameObject.SetActive(false);
+        this.talk.transform.gameObject.SetActive(false);
+        this.run.transform.gameObject.SetActive(false);
+        this.set.transform.gameObject.SetActive(false);
+    }
+
+    void PlayerTurn(){
+        appearText.text = "플레이어의 턴. 옆에서 행동을 선택해주십시오.";
+        this.atack.transform.gameObject.SetActive(true);
+        this.talk.transform.gameObject.SetActive(true);
+        this.run.transform.gameObject.SetActive(true);
+        this.set.transform.gameObject.SetActive(true);
+    }
+
     void ReloadStats(){
         nowSwordLevel.text = "Sword Lv :" + SwordLevel;
         nowSpearLevel.text = "Spear Lv :" + SpearLevel;
@@ -63,95 +189,5 @@ public class Fightstart : MonoBehaviour
         DEFState.text = "My DEF :" + DEF;
         HpState.text = NowHP + "/" + MaxHP;
         nowGold.text = Gold + "G";
-
-
-    }
-
-    void Start()
-    {
-        string monsterName = PlayerPrefs.GetString("monsterName"); // 전투 씬으로 넘어오기 전에 입력받은 몬스터의 이름을 가져옴 (change_to_fight 스크립트 참고)
-        string[] monsterNames = new string[]{"sin", "cos", "tan", "sincos", "costan", "sintan", "boss"}; // 배열에 몬스터 종류 저장
-        monsterIndex = System.Array.IndexOf(monsterNames, monsterName); // 가져온 몬스터의 이름의 인덱스 값 저장
-        monster_setting(monsterIndex); // 인덱스 값을 인수로 주어 몬스터 설정을 실행하도록 함.
-        PlayerTurn();
-    }
-
-    void PlayerTurn(){
-        appearText.text = "플레이어의 턴. 옆에서 행동을 선택해주십시오.";
-        Turn = "Player";
-        Act = "none";
-    }
-
-    void Playeratack(){
-        Act = "Atack";
-        Turn = "Monster";
-        MonsterAtacked();
-    }
-
-    void MonsterAtacked(){
-        damage = ATK - monsterName.def;
-        appearText.text = "사용자의 공격!" + damage + "데미지를 입혔다!";
-    }
-
-    void MonsterAtack(){
-        
-    }
-
-    // 각 몬스터의 정보를 저장하고, 인수에 들어온 값(= 몬스터 종류)에 따라 출현 문구 설정
-    void monster_setting(int input_value)
-    {
-        // 각 몬스터의 정보 저장
-        monster sin;
-        sin.name = "Sin 클롭스";
-        sin.appearText = "Sin 클롭스가 나타났다!";
-        sin.atk = 10;
-        sin.def = 8;
-        sin.hp = 20;
-
-        monster cos;
-        cos.name = "Cos 클롭스";
-        cos.appearText = "Cos 클롭스가 나타났다!";
-        cos.atk = 12;
-        cos.def = 10;
-        cos.hp = 20;
-
-        monster tan;
-        tan.name = "Tan 클롭스";
-        tan.appearText = "Tan 클롭스가 나타났다!";
-        tan.atk = 15;
-        tan.def = 12;
-        tan.hp = 20;
-
-        monster sincos;
-        sincos.name = "SinCos 클롭스";
-        sincos.appearText = "SinCos 클롭스가 나타났다!";
-        sincos.atk = 20;
-        sincos.def = 18;
-        sincos.hp = 100;
-
-        monster costan;
-        costan.name = "CosTan 클롭스";
-        costan.appearText = "CosTan 클롭스가 나타났다!";
-        costan.atk = 25;
-        costan.def = 20;
-        costan.hp = 100;
-
-        monster sintan;
-        sintan.name = "SinTan 클롭스";
-        sintan.appearText = "SinTan 클롭스가 나타났다!";
-        sintan.atk = 30;
-        sintan.def = 25;
-        sintan.hp = 100;
-
-        monster boss;
-        boss.name = "보스";
-        boss.appearText = "보스가 나타났다!";
-        boss.atk = 100;
-        boss.def = 80;
-        boss.hp = 500;
-        
-        // 몬스터 종류에 따라 출현 문구 설정
-        monster[] monsterNameList = new monster[]{sin, cos, tan, sincos, costan, sintan, boss};
-        appearText.text = monsterNameList[input_value].appearText; // sin.appearText처럼 요소에 직접 접근해도 되지만, 한 줄 한 줄 따로 적어줘야 하는 게 귀찮아서 배열을 만들고, 인덱스 값으로 접근함.
     }
 }
