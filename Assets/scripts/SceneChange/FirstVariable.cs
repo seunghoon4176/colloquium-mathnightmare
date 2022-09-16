@@ -18,7 +18,7 @@ public class FirstVariable : MonoBehaviour
     }
 
     public void LetsStart(){
-        PlayerPrefs.SetInt("Gold", 1000);
+        PlayerPrefs.SetInt("Gold", 500);
         PlayerPrefs.SetInt("NowHP", 20);
         PlayerPrefs.SetInt("MaxHP", 20);
         PlayerPrefs.SetInt("ATK", 5);
@@ -27,5 +27,6 @@ public class FirstVariable : MonoBehaviour
         PlayerPrefs.SetInt("SwordLevel", 0);
         PlayerPrefs.SetInt("SpearLevel", 0);
         PlayerPrefs.SetInt("nowweapon", 0);
+        PlayerPrefs.SetInt("Itemslot", 0);
     }
 }

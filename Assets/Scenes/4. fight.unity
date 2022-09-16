@@ -606,7 +606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Setting
+  m_text: CW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1841,6 +1841,7 @@ MonoBehaviour:
   nowweapon: 0
   monsterIndex: 0
   Gold: 0
+  WeaponATK: 0
   appearText: {fileID: 1785698597}
   nowSwordLevel: {fileID: 1876157202}
   nowSpearLevel: {fileID: 1663793343}
@@ -1859,6 +1860,19 @@ MonoBehaviour:
   hp: 0
   damage: 0
   MonsterHP: {fileID: 817848087}
+  Itemslot: 0
+  hand: {fileID: 1389482287}
+  handimage: {fileID: 21300000, guid: f629d5eeb2fc344e7a2d1609fe42d202, type: 3}
+  Sword1: {fileID: 21300000, guid: 363d9b79e353a41aebe9bf8bf804fdb4, type: 3}
+  Sword2: {fileID: 21300000, guid: ce1eadf46685e41c99987f193542d886, type: 3}
+  Sword3: {fileID: 21300000, guid: c5d5f89a10c2f41a1bbc313a239a28fc, type: 3}
+  Sword4: {fileID: 21300000, guid: f9ff7070d5d6d4f77834e1a96b085640, type: 3}
+  Sword5: {fileID: 21300000, guid: 26620db8bf979465e9eaee3743e9cf27, type: 3}
+  Spear1: {fileID: 21300000, guid: 7f41f473eb8fe4ca1adab8f284796bea, type: 3}
+  Spear2: {fileID: 21300000, guid: 37d73be8156444c898afed1500da472e, type: 3}
+  Spear3: {fileID: 21300000, guid: fc2749195cb824890b50f202e2e3b536, type: 3}
+  Spear4: {fileID: 21300000, guid: 9afb5fc42fb8a4c359b0199b9207679d, type: 3}
+  Spear5: {fileID: 21300000, guid: 5b058e3bd8fb4475698cf1dcabc4c1c7, type: 3}
 --- !u!1 &1389482284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f67504f5b5eccb41934e84834a50c55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f629d5eeb2fc344e7a2d1609fe42d202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2985,7 +2999,7 @@ GameObject:
   - component: {fileID: 2088162055}
   - component: {fileID: 2088162054}
   m_Layer: 5
-  m_Name: Setting
+  m_Name: ChangeWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3058,7 +3072,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1358264154}
         m_TargetAssemblyTypeName: Fightstart, Assembly-CSharp
-        m_MethodName: PlayerRUN
+        m_MethodName: PlayerChangeWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
