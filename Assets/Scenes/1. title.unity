@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -866,6 +867,7 @@ GameObject:
   - component: {fileID: 1209359283}
   - component: {fileID: 1209359285}
   - component: {fileID: 1209359286}
+  - component: {fileID: 1209359287}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -914,6 +916,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_name: 1-1. setting
+--- !u!114 &1209359287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209359281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d6eb9d73b9d48aa99406e917024d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1271904845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1015,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1209359285}
         m_TargetAssemblyTypeName: sceneChange, Assembly-CSharp
         m_MethodName: ButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1209359287}
+        m_TargetAssemblyTypeName: FirstVariable, Assembly-CSharp
+        m_MethodName: LetsStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
