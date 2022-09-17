@@ -10,5 +10,5 @@
 <br>**To-do list (공동 개발에 이용할 목록으로, 전체적인 워크플로우와 개발 과정을 담습니다.)**
 <br>**개발 완료. 각 리스트 항목들은 전부 삭제되었습니다.**
 <br>**질문이 있으면 sonseunghoon@icloud.com 으로 부탁드립니다.**
-<br>**빌드 파일 링크:**
+<br>**빌드 파일 링크:https://drive.google.com/file/d/1k-VMMa-TvHkPfPv8I0cCzdtd4xsMOjGb/view?usp=sharing**
 <br>**프로젝트 단축 URL:https://han.gl/ULcYB**
