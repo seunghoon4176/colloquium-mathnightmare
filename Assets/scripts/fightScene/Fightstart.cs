@@ -12,8 +12,6 @@ public class Fightstart : MonoBehaviour
     public int DEF;
     public int SwordLevel;
     public int SpearLevel;
-    public int nowweapon;
-    public int monsterIndex;
     public int Gold;
     public int WeaponATK;
     //요기까진 수치들 가져오기
@@ -58,8 +56,6 @@ public class Fightstart : MonoBehaviour
     public Sprite Spear4;
     public Sprite Spear5;
     //아이템 관련
-    public GameObject InventoryParents;
-    public int Inventory;
     /*
     void Awake(){
         NowHP = PlayerPrefs.GetInt("NowHP");
@@ -83,14 +79,14 @@ public class Fightstart : MonoBehaviour
     void Start()
     {
         monsterName = PlayerPrefs.GetString("monsterNames"); // 전투 씬으로 넘어오기 전에 입력받은 몬스터의 이름을 가져옴 (change_to_fight 스크립트 참고)
+        WeaponATK = ATK;
+
         NowHP = PlayerPrefs.GetInt("NowHP");
         MaxHP = PlayerPrefs.GetInt("MaxHP");
         ATK = PlayerPrefs.GetInt("ATK");
-        WeaponATK = ATK;
         DEF = PlayerPrefs.GetInt("DEF");
         SwordLevel = PlayerPrefs.GetInt("SwordLevel");
         SpearLevel = PlayerPrefs.GetInt("SpearLevel");
-        nowweapon = PlayerPrefs.GetInt("nowweapon");
         Gold = PlayerPrefs.GetInt("Gold");
 
         nowSwordLevel.text = "Sword Lv :" + SwordLevel;
@@ -106,21 +102,6 @@ public class Fightstart : MonoBehaviour
         MonsterHP.text = "Enemi Monster's HP:" + hp;
         PlayerTurn();
         damage = 0;
-
-        this.InventoryParents.transform.gameObject.SetActive(false);
-        Inventory = 0;
-    }
-
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.I)) {
-            if (Inventory == 0) {
-                this.InventoryParents.transform.gameObject.SetActive(true);
-                Inventory = 1;
-            } else if (Inventory == 1) {
-                this.InventoryParents.transform.gameObject.SetActive(false);
-                Inventory = 0;
-            }
-        }
     }
 
     //요 안에 4가지 버튼을 담는다. 
@@ -134,6 +115,7 @@ public class Fightstart : MonoBehaviour
             appearText.text = "몬스터를 처치했다! 100골드를 획득했다!";
             Invoke("CloseBattle",2f);
             Gold += 100;
+            PlayerPrefs.SetInt("Gold", Gold);
         }else{
             Invoke("Monsteratack",2f);
         }
@@ -144,6 +126,8 @@ public class Fightstart : MonoBehaviour
         if (runpercent >= 90){
             appearText.text = "괴물과 소통했습니다! 괴물이 그저 물러갔습니다! 50 골드 획득!";
             Gold += 50;
+
+            PlayerPrefs.SetInt("Gold", Gold);
             Invoke("CloseBattle",2f);
         }else{
             appearText.text = "대화가 실패했습니다!";
@@ -167,6 +151,7 @@ public class Fightstart : MonoBehaviour
         MonsterTurn();
         appearText.text = "무기가 변경되었습니다. 무기가 없다면 아무 일도 일어나지 않습니다.";
         Itemslot += 1;
+        PlayerPrefs.SetInt("Itemslot", Itemslot);
         LoadItemSlot();
         Invoke("Monsteratack",2f);
     }

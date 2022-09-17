@@ -26,7 +26,6 @@ public class FirstVariable : MonoBehaviour
         PlayerPrefs.SetInt("LP", 10);
         PlayerPrefs.SetInt("SwordLevel", 0);
         PlayerPrefs.SetInt("SpearLevel", 0);
-        PlayerPrefs.SetInt("nowweapon", 0);
         PlayerPrefs.SetInt("Itemslot", 0);
     }
 }
