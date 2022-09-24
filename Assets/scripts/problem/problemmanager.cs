@@ -11,6 +11,7 @@ public class problemmanager : MonoBehaviour
     public int prnumber;
     public GameObject change;
     public GameObject answerbox;
+    public int LP;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class problemmanager : MonoBehaviour
         prnumber = 1;
         loadpr();
         solveproblem = false;
+        LP = PlayerPrefs.GetInt("LP");
     }
 
     // Update is called once per frame
@@ -51,6 +53,8 @@ public class problemmanager : MonoBehaviour
         if(prnumber == 1){
             if(answer == "4"){
                 problem.text = "Right!"; 
+                LP += 1; 
+                PlayerPrefs.SetInt("LP",LP);
                 Invoke("loadpr",2f);
                 solveproblem = true;
             }else{

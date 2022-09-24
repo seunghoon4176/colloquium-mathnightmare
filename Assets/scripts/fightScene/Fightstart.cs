@@ -56,30 +56,11 @@ public class Fightstart : MonoBehaviour
     public Sprite Spear4;
     public Sprite Spear5;
     //아이템 관련
-    /*
-    void Awake(){
-        NowHP = PlayerPrefs.GetInt("NowHP");
-        MaxHP = PlayerPrefs.GetInt("MaxHP");
-        ATK = PlayerPrefs.GetInt("ATK");
-        DEF = PlayerPrefs.GetInt("DEF");
-        SwordLevel = PlayerPrefs.GetInt("SwordLevel");
-        SpearLevel = PlayerPrefs.GetInt("SpearLevel");
-        nowweapon = PlayerPrefs.GetInt("nowweapon");
-        Gold = PlayerPrefs.GetInt("Gold");
-
-        nowSwordLevel.text = "Sword Lv :" + SwordLevel;
-        nowSpearLevel.text = "Spear Lv :" + SpearLevel;
-        ATKState.text = "My ATK :" + ATK;
-        DEFState.text = "My DEF :" + DEF;
-        HpState.text = NowHP + "/" + MaxHP;
-        nowGold.text = Gold + "G";
-    }
-    */
+    
 
     void Start()
     {
         monsterName = PlayerPrefs.GetString("monsterNames"); // 전투 씬으로 넘어오기 전에 입력받은 몬스터의 이름을 가져옴 (change_to_fight 스크립트 참고)
-        WeaponATK = ATK;
 
         NowHP = PlayerPrefs.GetInt("NowHP");
         MaxHP = PlayerPrefs.GetInt("MaxHP");
@@ -102,6 +83,7 @@ public class Fightstart : MonoBehaviour
         MonsterHP.text = "Enemi Monster's HP:" + hp;
         PlayerTurn();
         damage = 0;
+        WeaponATK = ATK + 5;
     }
 
     //요 안에 4가지 버튼을 담는다. 
@@ -202,7 +184,7 @@ public class Fightstart : MonoBehaviour
     void LoadMonsterType(){
         if (monsterName == "sin"){
             atk = 10;
-            def = 3;
+            def = 0;
             hp = 10;
         }
         if (monsterName == "cos"){
@@ -246,6 +228,7 @@ public class Fightstart : MonoBehaviour
             if(SwordLevel == 0){
                 hand.sprite = handimage;
                 WeaponATK = ATK;
+                WeaponATK += 3;
                 ReloadStats();
             }
             if(SwordLevel == 1){
